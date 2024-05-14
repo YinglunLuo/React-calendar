@@ -1,0 +1,98 @@
+.calendar {
+    width: 400px;
+    margin: 20px auto;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    background-color: rgb(247, 249, 253);
+    border-radius: 8px;
+    overflow: hidden;
+    height: 500px;
+    position: relative;
+    /* Zoom in effect here */
+    transition: transform 0.3s ease;
+  }
+  
+  .calendar:hover {
+    /* Zoom in effect here */
+    transform: scale(1.05);
+  }
+  
+  .calendar-scroll {
+    height: 100%;
+    overflow-y: scroll;
+  }
+  
+  .calendar-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .calendar-month {
+    margin-bottom: 1rem;
+    background-color: rgb(247, 249, 253);
+  }
+  
+  .calendar-header {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 7px;
+    color: black;
+    font-size: 1.5rem;
+    background-color: rgba(222, 230, 240, 0.8);
+    backdrop-filter: blur(5px);
+  }
+  
+  .sticky {
+    position: sticky;
+    top: 0;
+    /* Opacity and blur here */
+    z-index: 10;
+  }
+  
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    padding: 2px;
+  }
+  
+  .calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background-color: rgb(247, 249, 253);
+    padding: 8px;
+  }
+  
+  .calendar-day-header {
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .calendar-day {
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 50%;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+  }
+  
+  .calendar-day:hover {
+    background-color: black;
+    color: white;
+  }
+  
+  .calendar-day.highlight {
+    background-color: grey;
+    border-radius: 0;
+    color: white;
+  }
+  
+  .calendar-day.selection-head,
+  .calendar-day.selection-end {
+    background-color: black;
+    color: white;
+  }
+  
+  .calendar-day.sunday,
+  .calendar-day-header.sunday {
+    color: red;
+  }
+  
